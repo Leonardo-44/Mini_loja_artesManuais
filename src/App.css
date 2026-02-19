@@ -47,6 +47,10 @@
 
 /*Distanciamento*/
 
+.gap32{
+    gap: 32px;
+}
+
 .gap16{
     gap: 16px;
 }

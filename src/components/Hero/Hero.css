@@ -1,6 +1,7 @@
 .hero{
     height: 85vh;
     background: var(--bg-hero-about);
+    border-bottom: 0.5px solid #000;
 }
 
 span{

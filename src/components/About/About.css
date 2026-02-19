@@ -1,0 +1,19 @@
+.about {
+  height: 55vh;
+  background-color: var(--bg-hero-about);
+}
+
+.destaque {
+  background: linear-gradient(to right, #e27923, #7e1f1f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dstq-p{
+  color: var(--color-quartenary-font);
+}
+
+.margin-bottom{
+  margin: 0 0 64px 0;
+}
