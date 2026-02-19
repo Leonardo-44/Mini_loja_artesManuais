@@ -1,0 +1,15 @@
+.header {
+    height: 70px;
+    background: var(--bg-header);
+    border-bottom: 1px solid black;
+}
+
+.title{
+    color: var(--color-primary-font);
+    cursor: pointer;
+}
+
+li:hover{
+    transition: 0.3s;
+    color: var(--color-secondary-font);
+}

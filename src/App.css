@@ -1,0 +1,82 @@
+:root{
+    --bg-header: #fefbf8;
+    --bg-hero-about: #ebe6e0;
+    --bg-products: #f9f5ee;
+    --bg-footer: #603117;
+    --bg-primary-btn: #986a6a;
+    --bg-secondary-btn: #31623d;
+    --color-primary-font: #2a1f19;
+    --color-secondary-font: #31623d;
+    --color-tertiary-font: #ffffff;
+    --color-quartenary-font:  #98521a;
+    --color-fiveth--font: #5e321a;
+    --color-sixth-font: #595959;
+    --color-seventh-font: #9a9a9a;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 35px;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.fd-column{
+    flex-direction: column;
+}
+
+.alg-center{
+    align-items: center;
+}
+
+.jc-center{
+    justify-content: center;
+}
+
+.jc-between{
+    justify-content: space-between;
+}
+
+.jc-around{
+    justify-content: space-around;
+}
+
+/*Distanciamento*/
+
+.gap16{
+    gap: 16px;
+}
+
+.gap8{
+    gap: 8px;
+}
+
+/*TEXTOS*/
+
+.txt-align{
+    text-align: center;
+}
+
+/*Botões*/
+
+.btn-primary{
+    background: var(--bg-secondary-btn);
+    color: var(--color-tertiary-font);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+} 
+
+.btn-secondary{
+    background: var(--bg-primary-btn);
+    color: var(--color-tertiary-font);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}

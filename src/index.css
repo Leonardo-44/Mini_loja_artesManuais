@@ -1,0 +1,23 @@
+/*Fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Libre Baskerville", serif;
+}
+
+ol, ul{
+    list-style: none;
+    cursor: pointer;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
