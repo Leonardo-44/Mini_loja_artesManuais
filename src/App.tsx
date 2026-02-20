@@ -1,10 +1,10 @@
 import {Routes, Route} from 'react-router-dom'
 
 import Landing from './pages/Landing/Landing'
-import Chaveiros from './pages/Chaveiros';
-import Pulseiras from './pages/Pulseiras';
-import Resina from './pages/Resina';
-import Tercos from './pages/Tercos'
+import Chaveiros from './pages/Chaveiros/Chaveiros';
+import Pulseiras from './pages/Pulseiras/Pulseiras';
+import Resina from './pages/Resina/Resina';
+import Tercos from './pages/Tercos/Tercos'
 
 import './App.css'
 

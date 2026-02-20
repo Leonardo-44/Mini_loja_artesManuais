@@ -2,3 +2,12 @@
     height: 35vh;
     background: var(--bg-products);
 }
+
+.card-products{
+    padding: 30px 60px;
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid #98521A;
+    cursor: pointer;
+    width: fit-content;
+}

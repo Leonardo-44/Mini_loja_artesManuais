@@ -4,7 +4,7 @@ import "../../App.css";
 function Hero() {
   return (
     <>
-      <div className="hero d-flex jc-center alg-center">
+      <div className="hero d-flex jc-center alg-center" id="hero">
         <div className=" d-flex fd-column txt-align gap16">
           <p>
             {" "}
