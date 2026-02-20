@@ -11,13 +11,19 @@ function Header() {
           </div>
           <div>
             <ul className="d-flex gap16 jc-center alg-center">
-              <a href="#produtos">
+              <a href="#products">
                 <li>Produtos</li>
               </a>
-              <a href="#sobre">
+              <a href="#about">
                 <li>Sobre</li>
               </a>
-              <button className="btn-primary">Contato</button>
+              <a
+                href="https://wa.me/5589999300439"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-primary">Contato</button>
+              </a>
             </ul>
           </div>
         </div>

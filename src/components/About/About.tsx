@@ -9,7 +9,7 @@ import Heart from "../../icons/heart.svg"
 function About() {
   return (
     <>
-      <div className="about d-flex jc-center alg-center fd-column">
+      <div className="about d-flex jc-center alg-center fd-column" id="about">
         <div className="txt-align d-flex fd-column gap8 margin-bottom">
           <p className="dstq-p">SOBRE NÓS</p>
           <h2>
@@ -28,7 +28,7 @@ function About() {
             que carregam significado e beleza.
           </p>
         </div>
-        <div className="d-flex gap32">
+        <div className="d-flex container jc-around">
           <div className="d-flex fd-column txt-align jc-center alg-center gap8">
             <img src={Star} alt="Star" width="32px" />
             <h4>Feito à Mão</h4>
@@ -47,7 +47,7 @@ function About() {
           </div>
           <div className="d-flex fd-column txt-align jc-center alg-center gap8">
             <img src={FLower} alt="Star" width="32px" />
-            <h4>FMatériais de Qualidade</h4>
+            <h4>Matériais de Qualidade</h4>
             <p>
              Pedra, linhas e resinas <br />
              de Alta Qualidade

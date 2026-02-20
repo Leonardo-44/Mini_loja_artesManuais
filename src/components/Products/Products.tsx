@@ -5,7 +5,9 @@ function Products() {
 
   return (
     <>
-        PRODUCTS
+        <div className='products'>
+
+        </div>
     </>
   )
 }

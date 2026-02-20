@@ -1,0 +1,18 @@
+.footer{
+    height: 35vh;
+    background-color: var(--bg-footer);
+}
+
+.fonte-branca{
+    color: var(--color-tertiary-font);
+}
+
+.fonte-cinza{
+    color: var(--color-seventh-font);
+}
+
+.separacao{
+    border: 1px solid var(--color-quartenary-font);
+    width: 100%;
+    margin:60px 0 40px 0;
+}

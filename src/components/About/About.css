@@ -1,6 +1,7 @@
 .about {
   height: 55vh;
   background-color: var(--bg-hero-about);
+  border-top: 0.5px solid  #000;
 }
 
 .destaque {

@@ -68,6 +68,7 @@
 /*Botões*/
 
 .btn-primary{
+    width: fit-content;
     background: var(--bg-secondary-btn);
     color: var(--color-tertiary-font);
     border: none;
