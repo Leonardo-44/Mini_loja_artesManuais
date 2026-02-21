@@ -59,6 +59,10 @@
     gap: 8px;
 }
 
+.margin32{
+    margin: 32px 0 0 0;
+}
+
 /*TEXTOS*/
 
 .txt-align{
@@ -75,6 +79,7 @@
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 } 
 
 .btn-secondary{
@@ -84,4 +89,12 @@
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.btn-primary:hover{
+    filter: brightness(0.9);
+}
+
+.btn-secondary:hover{
+    filter: brightness(0.9);
 }

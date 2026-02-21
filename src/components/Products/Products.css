@@ -10,4 +10,11 @@
     border: 1px solid #98521A;
     cursor: pointer;
     width: fit-content;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+.card-products:hover{
+    background-color: #f5dac3;
+    transform: scale(1.02);
 }

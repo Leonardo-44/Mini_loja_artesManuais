@@ -7,7 +7,7 @@ function Header() {
       <div className="header d-flex">
         <div className="container d-flex alg-center jc-between">
           <div>
-            <a href="#hero"><h3 className="title">Artes Manuais</h3></a>
+            <a href="/"><h3 className="title">Artes Manuais</h3></a>
           </div>
           <div>
             <ul className="d-flex gap16 jc-center alg-center">

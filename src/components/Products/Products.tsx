@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Products.css";
 import "../../App.css";
 
@@ -14,36 +16,39 @@ function Products() {
           <p>Itens Artesanais</p>
         </div>
         <div className="container d-flex jc-between">
-          <div className="card-products">
-            <div className="gap8">
-              <h3>Terços</h3>
-              <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+          <Link to={"/tercos"}>
+            <div className="card-products">
+              <div className="gap8">
+                <h3>Terços</h3>
+                <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+              </div>
             </div>
-          </div>
-          <div className="card-products">
-            <div className="gap8">
-              <h3>Resina</h3>
-              <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+          </Link>
+          <Link to="/resina">
+            <div className="card-products">
+              <div className="gap8">
+                <h3>Resina</h3>
+                <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+              </div>
             </div>
-          </div>
-          <div className="card-products">
-            <div className="gap8">
-              <h3>Pulseiras</h3>
-              <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+          </Link>
+          <Link to="/pulseiras">
+            <div className="card-products">
+              <div className="gap8">
+                <h3>Pulseiras</h3>
+                <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+              </div>
             </div>
-          </div>
-          <div className="card-products">
-            <div className="gap8">
-              <h3>Pulseiras</h3>
-              <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+          </Link>
+
+          <Link to="/tapetes">
+            <div className="card-products">
+              <div className="gap8">
+                <h3>Tapetes</h3>
+                <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+              </div>
             </div>
-          </div>
-          <div className="card-products">
-            <div className="gap8">
-              <h3>Tapetes</h3>
-              <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
-            </div>
-          </div>
+          </Link>
         </div>
       </div>
     </>
