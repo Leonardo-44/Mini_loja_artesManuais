@@ -1,7 +1,10 @@
 import TercoCard from "./TercosCard";
-import Img from "../../assets/react.svg"
+import Img from "../../assets/react.svg";
+import Header from "../Header/Header";
 
-const WHATSAPP_NUMERO = "5511999999999"; // ← troque pelo seu número
+import "./Tercos.css"
+
+const WHATSAPP_NUMERO: string = "5511999999999"; // ← troque pelo seu número
 
 const tercos = [
   {
@@ -22,22 +25,36 @@ const tercos = [
     preco: 27.5,
     imagem: "https://via.placeholder.com/260x220?text=Terço+3",
   },
+  {
+    id: 4,
+    nome: "Terço de São Francisco",
+    preco: 27.5,
+    imagem: "https://via.placeholder.com/260x220?text=Terço+3",
+  },
+  {
+    id: 5,
+    nome: "Terço de São Francisco",
+    preco: 27.5,
+    imagem: "https://via.placeholder.com/260x220?text=Terço+3",
+  },
 ];
 
 function TercoList() {
   return (
-    <div className="container d-flex margin32 jc-between">
-        
-      {tercos.map((terco) => (
-        <TercoCard
-          key={terco.id}
-          nome={terco.nome}
-          preco={terco.preco}
-          imagem={terco.imagem}
-          whatsappNumero={WHATSAPP_NUMERO}
-        />
-      ))}
-    </div>
+    <>
+      <Header />
+      <div className="container terco-list">
+        {tercos.map((terco) => (
+          <TercoCard
+            key={terco.id}
+            nome={terco.nome}
+            preco={terco.preco}
+            imagem={terco.imagem}
+            whatsappNumero={WHATSAPP_NUMERO}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

@@ -4,7 +4,7 @@ interface TercoCardProps {
   nome: string;
   preco: number;
   imagem: string;
-  whatsappNumero: string; // ex: "5511999999999"
+  whatsappNumero: string;
   mensagem?: string;
 }
 
@@ -37,21 +37,21 @@ function TercoCard({ nome, preco, imagem, whatsappNumero, mensagem }: TercoCardP
 
 const styles: { [key: string]: React.CSSProperties } = {
   card: {
-    background: "#fefbf8",           // --bg-header
+    background: "#fefbf8",
     borderRadius: "16px",
     boxShadow: "0 4px 20px rgba(42,31,25,0.10)",
     overflow: "hidden",
     display: "flex",
     flexDirection: "column",
-    width: "260px",
+    width: "100%",          // ← era "260px", agora ocupa a coluna do grid
     transition: "transform 0.2s, box-shadow 0.2s",
-    border: "1px solid #ebe6e0",     // --bg-hero-about
+    border: "1px solid #ebe6e0",
   },
   imageWrapper: {
     width: "100%",
     height: "220px",
     overflow: "hidden",
-    backgroundColor: "#ebe6e0",      // --bg-hero-about
+    backgroundColor: "#ebe6e0",
   },
   image: {
     width: "100%",
@@ -64,27 +64,27 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
-    backgroundColor: "#f9f5ee",     // --bg-products
+    backgroundColor: "#f9f5ee",
   },
   nome: {
     margin: 0,
     fontSize: "1rem",
     fontWeight: 600,
-    color: "#2a1f19",               // --color-primary-font
+    color: "#2a1f19",
     fontFamily: "'Georgia', serif",
   },
   preco: {
     fontSize: "1.25rem",
     fontWeight: 700,
-    color: "#98521a",               // --color-quartenary-font
+    color: "#98521a",
   },
   botao: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     gap: "8px",
-    backgroundColor: "#31623d",     // --bg-secondary-btn
-    color: "#ffffff",               // --color-tertiary-font
+    backgroundColor: "#31623d",
+    color: "#ffffff",
     textDecoration: "none",
     padding: "10px 16px",
     borderRadius: "8px",
