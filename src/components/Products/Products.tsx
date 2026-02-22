@@ -46,6 +46,15 @@ function Products() {
               </div>
             </div>
           </Link>
+
+           <Link to="/chaveiros">
+            <div className="card-products">
+              <div className="gap8 d-flex fd-column alg-center jc-center">
+                <h3>Chaveiros</h3>
+                <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

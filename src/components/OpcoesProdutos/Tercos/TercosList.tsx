@@ -11,32 +11,8 @@ const tercos = [
   {
     id: 1,
     nome: "Terço de Nossa Senhora",
-    preco: 29.9,
+    valor: "Valor Via Whatsapp",
     imagem: Img,
-  },
-  {
-    id: 2,
-    nome: "Terço Sagrado Coração",
-    preco: 34.9,
-    imagem: "https://via.placeholder.com/260x220?text=Terço+2",
-  },
-  {
-    id: 3,
-    nome: "Terço de São Francisco",
-    preco: 27.5,
-    imagem: "https://via.placeholder.com/260x220?text=Terço+3",
-  },
-  {
-    id: 4,
-    nome: "Terço de São Francisco",
-    preco: 27.5,
-    imagem: "https://via.placeholder.com/260x220?text=Terço+3",
-  },
-  {
-    id: 5,
-    nome: "Terço de São Francisco",
-    preco: 27.5,
-    imagem: "https://via.placeholder.com/260x220?text=Terço+3",
   },
 ];
 
@@ -49,7 +25,7 @@ function TercoList() {
           <TercoCard
             key={terco.id}
             nome={terco.nome}
-            preco={terco.preco}
+            valor={terco.valor}
             imagem={terco.imagem}
             whatsappNumero={WHATSAPP_NUMERO}
           />
