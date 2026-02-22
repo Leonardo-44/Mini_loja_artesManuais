@@ -5,7 +5,7 @@
   padding: 1rem;
   width: 90%;
   max-width: 1200px;
-  padding-top: 120px;
+  padding-top: 100px;
   margin: 0 auto;
 }
 .card {
@@ -23,6 +23,16 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 6px 6px 16px rgba(42, 31, 25, 0.38);
+}
+
+.voltar {
+  padding-top: 90px; /* 70px do header + 20px de respiro */
+  display: flex;
+  position: relative;
+}
+.voltar h3:hover {
+  color: var(--color-secondary-font);
+  transition: 0.3s;
 }
 
 .imageWrapper {

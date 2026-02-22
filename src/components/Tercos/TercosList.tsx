@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import TercoCard from "./TercosCard";
 import Img from "../../assets/react.svg";
 import Header from "../Header/Header";
 
 import styles from "./Tercos.module.css";
 
-const WHATSAPP_NUMERO: string = "5589999300439"; 
+const WHATSAPP_NUMERO: string = "5589999300439";
 
 const tercos = [
   {
@@ -42,7 +43,12 @@ const tercos = [
 function TercoList() {
   return (
     <>
-      <Header />
+      <Header />{" "}
+      {/* <div className="voltar container">
+        <Link to="/">
+          <h3>← Voltar Para a Tela Inicial</h3>
+        </Link>
+      </div> */}
       <div className={`${styles["terco-list"]}`}>
         {tercos.map((terco) => (
           <TercoCard

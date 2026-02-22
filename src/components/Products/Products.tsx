@@ -12,10 +12,10 @@ function Products() {
           <h2>Nossos Produtos</h2>
           <p>Itens Artesanais</p>
         </div>
-        <div className="container d-flex jc-between">
+        <div className=" cards container d-flex jc-between">
           <Link to={"/tercos"}>
             <div className="card-products">
-              <div className="gap8">
+              <div className="gap8 d-flex fd-column alg-center jc-center">
                 <h3>Terços</h3>
                 <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
               </div>
@@ -23,7 +23,7 @@ function Products() {
           </Link>
           <Link to="/resina">
             <div className="card-products">
-              <div className="gap8">
+              <div className="gap8 d-flex fd-column alg-center jc-center">
                 <h3>Resina</h3>
                 <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
               </div>
@@ -31,7 +31,7 @@ function Products() {
           </Link>
           <Link to="/pulseiras">
             <div className="card-products">
-              <div className="gap8">
+              <div className="gap8 d-flex fd-column alg-center jc-center">
                 <h3>Pulseiras</h3>
                 <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
               </div>
@@ -40,7 +40,7 @@ function Products() {
 
           <Link to="/tapetes">
             <div className="card-products">
-              <div className="gap8">
+              <div className="gap8 d-flex fd-column alg-center jc-center">
                 <h3>Tapetes</h3>
                 <h6 className="fonte-cinza">Ver Coleção &#8594;</h6>
               </div>

@@ -25,7 +25,7 @@ function Header() {
             <span className={`barra ${menuAberto ? "aberta" : ""}`}></span>
           </button>
 
-          <ul className={`nav-links d-flex alg-center jc-center gap8 ${menuAberto ? "nav-aberta" : ""}`}>
+          <ul className={`nav-links d-flex alg-center jc-center gap16 ${menuAberto ? "nav-aberta" : ""}`}>
             <a href="#products" onClick={() => setMenuAberto(false)}>
               <li>Produtos</li>
             </a>
