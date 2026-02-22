@@ -1,5 +1,5 @@
 
-import styles from "./Tercos.module.css"; // ou "./TercoCard.css" com className
+import styles from "../Cards.module.css"; // ou "./TercoCard.css" com className
 
 interface TercoCardProps {
   nome: string;

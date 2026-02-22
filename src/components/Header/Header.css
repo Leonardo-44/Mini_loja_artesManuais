@@ -54,7 +54,6 @@ li:hover {
     width: 100%;
     background: var(--bg-header);
     padding: 0;
-    border-bottom: 1px solid black;
     gap: 16px;
     align-items: center;
     max-height: 0;

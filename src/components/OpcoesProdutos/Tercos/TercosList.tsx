@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import TercoCard from "./TercosCard";
-import Img from "../../assets/react.svg";
-import Header from "../Header/Header";
+import Img from "../../../assets/react.svg";
+import Header from "../../Header/Header";
 
-import styles from "./Tercos.module.css";
+import styles from "../Cards.module.css";
 
 const WHATSAPP_NUMERO: string = "5589999300439";
 
@@ -44,12 +44,7 @@ function TercoList() {
   return (
     <>
       <Header />{" "}
-      {/* <div className="voltar container">
-        <Link to="/">
-          <h3>← Voltar Para a Tela Inicial</h3>
-        </Link>
-      </div> */}
-      <div className={`${styles["terco-list"]}`}>
+      <div className={`${styles["card-list"]}`}>
         {tercos.map((terco) => (
           <TercoCard
             key={terco.id}
@@ -60,6 +55,9 @@ function TercoList() {
           />
         ))}
       </div>
+      <Link className="d-flex alg-center jc-center" to="/">
+        <button className="btn-secondary">Voltar</button>
+      </Link>
     </>
   );
 }

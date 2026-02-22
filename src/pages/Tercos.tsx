@@ -1,5 +1,5 @@
 
-import TercoList from "../components/Tercos/TercosList";
+import TercoList from "../components/OpcoesProdutos/Tercos/TercosList";
 
 function Tercos() {
 

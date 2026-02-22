@@ -1,4 +1,4 @@
-.terco-list {
+.card-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -25,14 +25,13 @@
   box-shadow: 6px 6px 16px rgba(42, 31, 25, 0.38);
 }
 
-.voltar {
-  padding-top: 90px; /* 70px do header + 20px de respiro */
-  display: flex;
-  position: relative;
+.voltar{
+  color: #98521a;
+  transition: ease 0.3s;
 }
-.voltar h3:hover {
-  color: var(--color-secondary-font);
-  transition: 0.3s;
+
+.voltar:hover {
+  color: #85e19c;
 }
 
 .imageWrapper {
@@ -102,7 +101,7 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .terco-list {
+  .card-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -126,7 +125,7 @@
 
 /* Mobile */
 @media (max-width: 480px) {
-  .terco-list {
+  .card-list {
     grid-template-columns: 1fr;
     width: 95%;
     padding-top: 90px;
