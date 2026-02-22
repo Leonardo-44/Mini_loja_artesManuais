@@ -2,9 +2,9 @@ import TercoCard from "./TercosCard";
 import Img from "../../assets/react.svg";
 import Header from "../Header/Header";
 
-import "./Tercos.css"
+import styles from "./Tercos.module.css";
 
-const WHATSAPP_NUMERO: string = "5511999999999"; // ← troque pelo seu número
+const WHATSAPP_NUMERO: string = "5589999300439"; 
 
 const tercos = [
   {
@@ -43,7 +43,7 @@ function TercoList() {
   return (
     <>
       <Header />
-      <div className="container terco-list">
+      <div className={`${styles["terco-list"]}`}>
         {tercos.map((terco) => (
           <TercoCard
             key={terco.id}

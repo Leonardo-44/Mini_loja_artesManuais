@@ -24,7 +24,10 @@ function Hero() {
           </p>
 
           <div className="d-flex alg-center jc-center gap16">
-            <button className="btn-secondary">Ver Produtos</button>
+            <a href="#products">
+              {" "}
+              <button className="btn-secondary">Ver Produtos</button>
+            </a>
             <a
               href="https://wa.me/5589999300439"
               target="_blank"

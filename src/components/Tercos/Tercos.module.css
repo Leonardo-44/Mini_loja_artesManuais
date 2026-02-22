@@ -1,0 +1,138 @@
+.terco-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  padding-top: 120px;
+  margin: 0 auto;
+}
+.card {
+  background: #fefbf8;
+  border-radius: 16px;
+  box-shadow: 4px 4px 10px rgba(42, 31, 25, 0.28);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #382b1d;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 16px rgba(42, 31, 25, 0.38);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #ebe6e0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f9f5ee;
+}
+
+.nome {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2a1f19;
+  font-family: 'Georgia', serif;
+}
+
+.preco {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #98521a;
+}
+
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #31623d;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.botao:hover {
+  background-color: #245030;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .terco-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .imageWrapper {
+    height: 180px;
+  }
+
+  .nome {
+    font-size: 0.95rem;
+  }
+
+  .preco {
+    font-size: 1.1rem;
+  }
+
+  .botao {
+    font-size: 0.85rem;
+    padding: 9px 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .terco-list {
+    grid-template-columns: 1fr;
+    width: 95%;
+    padding-top: 90px;
+  }
+
+  .imageWrapper {
+    height: 200px;
+  }
+
+  .info {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .botao {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+}

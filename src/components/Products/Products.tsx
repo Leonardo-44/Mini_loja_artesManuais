@@ -5,11 +5,8 @@ import "../../App.css";
 
 function Products() {
   return (
-    <>
-      <div
-        className="products d-flex fd-column jc-center alg-center"
-        id="products"
-      >
+    <div id="products">
+      <div className="products d-flex fd-column jc-center alg-center">
         <div className="txt-align d-flex fd-column gap8 margin-bottom">
           <p className="dstq-p">CATALÓGO</p>
           <h2>Nossos Produtos</h2>
@@ -51,7 +48,7 @@ function Products() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
