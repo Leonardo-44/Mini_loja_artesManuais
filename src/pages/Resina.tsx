@@ -1,10 +1,10 @@
-
+import ResinaList from "../components/OpcoesProdutos/Resina/ResinaList";
 
 function Resina() {
 
   return (
     <>
-      Resina
+      <ResinaList/>   
     </>
   )
 }

@@ -1,7 +1,9 @@
 .about {
-  height: 55vh;
+  min-height: 55vh;
+  height: auto;
   background-color: var(--bg-hero-about);
-  border-top: 0.5px solid  #000;
+  border-top: 0.5px solid #000;
+  padding: 48px 1rem;
 }
 
 .destaque {
@@ -11,10 +13,51 @@
   background-clip: text;
 }
 
-.dstq-p{
+.dstq-p {
   color: var(--color-quartenary-font);
 }
 
-.margin-bottom{
-  margin: 0 0 64px 0;
+.margin-bottom {
+  margin: 0 0 48px 0;
 }
+
+.caixaTexto{
+  text-align: center;
+  margin: 0 auto;
+  width: 26%;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 36px 1.25rem;
+  }
+
+  .caixaTexto{
+    width: 60%;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+
+  .margin-bottom {
+    margin: 0 0 32px 0;
+  }
+
+  /* cards dos ícones em coluna no mobile */
+  .about .container {
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 320px){
+  .caixaTexto{
+    width: 90%;
+  }
+} 

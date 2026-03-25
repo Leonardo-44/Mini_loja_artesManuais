@@ -16,15 +16,15 @@ function About() {
             Cada Peça Conta <br />{" "}
             <span className="destaque">Uma História</span>
           </h2>
-          <p>
+          <p className="caixaTexto">
             Somos apaixonados pela arte feita à mão. Cada terço, cada peça em{" "}
-            <br />
+            
             resina, cada chaveiro é criado com dedicação e atenção aos detalhes.{" "}
-            <br />
+            
             Trabalhamos com materiais selecionados — pedras naturais, flores{" "}
-            <br />
+           
             secas, resina cristalina e muito carinho — para entregar peças
-            únicas <br />
+            únicas 
             que carregam significado e beleza.
           </p>
         </div>

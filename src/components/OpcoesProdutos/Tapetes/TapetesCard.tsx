@@ -1,7 +1,7 @@
 
 import styles from "../Cards.module.css"; // ou "./TercoCard.css" com className
 
-interface PulseiraCardProps {
+interface TercoCardProps {
   nome: string;
   valor: string;
   imagem: string;
@@ -9,7 +9,7 @@ interface PulseiraCardProps {
   mensagem?: string;
 }
 
-function PulseirasCard({ nome, valor, imagem, whatsappNumero, mensagem }: PulseiraCardProps) {
+function TapetesCard({ nome, valor, imagem, whatsappNumero, mensagem }: TercoCardProps) {
   const mensagemFormatada = mensagem
     ? encodeURIComponent(mensagem)
     : encodeURIComponent(`Olá! Tenho interesse no item em resina: ${nome}`);
@@ -36,4 +36,4 @@ function PulseirasCard({ nome, valor, imagem, whatsappNumero, mensagem }: Pulsei
   );
 }
 
-export default PulseirasCard;
+export default TapetesCard;

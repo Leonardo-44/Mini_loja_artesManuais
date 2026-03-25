@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ResinaCard from "./ResinaCard";
+import TapetesCard from "./TapetesCard";
 import Img from "../../../assets/react.svg";
 import Header from "../../Header/Header";
 
@@ -16,13 +16,13 @@ const tercos = [
   },
 ];
 
-function ResinaList() {
+function TapetesList() {
   return (
     <>
       <Header />{" "}
       <div className={`${styles["card-list"]}`}>
         {tercos.map((terco) => (
-          <ResinaCard
+          <TapetesCard
             key={terco.id}
             nome={terco.nome}
             valor={terco.valor}
@@ -38,4 +38,4 @@ function ResinaList() {
   );
 }
 
-export default ResinaList;
+export default TapetesList;

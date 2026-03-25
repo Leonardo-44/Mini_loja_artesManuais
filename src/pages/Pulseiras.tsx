@@ -1,9 +1,10 @@
+import PulseirasList from "../components/OpcoesProdutos/Pulseiras/PulseirasList";
 
 function Pulseiras() {
 
   return (
-    <>
-      PULSEIRAS
+    <>    
+      <PulseirasList/>     
     </>
   )
 }

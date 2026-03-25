@@ -1,9 +1,10 @@
+import ChaveirosList from "../components/OpcoesProdutos/Chaveiros/ChaveirosList";
 
 function Chaveiros() {
 
   return (
-    <>
-      CHAVEIROS
+    <> 
+      <ChaveirosList/>
     </>
   )
 }
