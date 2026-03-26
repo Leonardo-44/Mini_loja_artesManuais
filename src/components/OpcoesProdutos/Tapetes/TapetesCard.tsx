@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../Cards.module.css";
+import { useCart } from "../Cart/CartContext";
 
 interface Variacao {
   imagem: string;
@@ -22,10 +23,10 @@ function TapetesCard({
   valor,
   imagem,
   variacoes = [],
-  whatsappNumero,
   mensagem,
 }: TapeteCardProps) {
   const [indice, setIndice] = useState(0);
+  const { adicionarItem, removerItem, itens } = useCart();
 
   const todas: Variacao[] = [
     { imagem, nome, preco: valor, mensagem },
@@ -36,17 +37,29 @@ function TapetesCard({
   const nomeAtual  = atual.nome  ?? nome;
   const precoAtual = atual.preco ?? valor;
 
-  const mensagemFormatada = encodeURIComponent(
-    atual.mensagem ?? mensagem ?? `Olá! Tenho interesse no item: ${nomeAtual}`
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumero}?text=${mensagemFormatada}`;
+  const itemId = `${nome}-${indice}`;
+  const noCarrinho = itens.some((i) => i.id === itemId);
 
   const irAnterior = () => setIndice((i) => (i - 1 + todas.length) % todas.length);
+  
   const irProxima  = () => setIndice((i) => (i + 1) % todas.length);
+  const handleToggleCarrinho = () => {
+    if (noCarrinho) {
+      removerItem(itemId);
+    } else {
+      adicionarItem({
+        id: itemId,
+        nome: nomeAtual,
+        imagem: atual.imagem,
+      });
+    }
+  };
 
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper} style={{ position: "relative" }}>
+        {/* Selo de selecionado no canto da imagem */}
+        {noCarrinho && <div className={styles.seloSelecionado}>✓</div>}
         <img src={atual.imagem} alt={nomeAtual} className={styles.image} />
 
         {todas.length > 1 && (
@@ -81,11 +94,17 @@ function TapetesCard({
               ›
             </button>
 
-            <div style={{
-              position: "absolute", bottom: 6, left: "50%",
-              transform: "translateX(-50%)",
-              display: "flex", gap: 5,
-            }}>
+            {/* Indicadores de variação — verde se aquela variação está no carrinho */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: 6,
+                left: "50%",
+                transform: "translateX(-50%)",
+                display: "flex",
+                gap: 5,
+              }}
+            >
               {todas.map((_, i) => (
                 <span
                   key={i}
@@ -105,13 +124,36 @@ function TapetesCard({
       <div className={styles.info}>
         <h3 className={styles.nome}>{nomeAtual}</h3>
         <span className={styles.preco}>{precoAtual}</span>
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.botao}>
-          <svg className={styles.icon} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L0 24l6.335-1.507A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.368l-.36-.214-3.732.888.924-3.644-.234-.374A9.818 9.818 0 1112 21.818z"/>
-          </svg>
-          Comprar via WhatsApp
-        </a>
+        <button
+          className={`${styles.botaoCarrinho} ${noCarrinho ? styles.botaoAdicionado : ""}`}
+          onClick={handleToggleCarrinho}
+        >
+          {noCarrinho ? (
+            <>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width={16}
+                height={16}
+              >
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+              </svg>
+              Adicionado — Remover
+            </>
+          ) : (
+            <>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width={16}
+                height={16}
+              >
+                <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-10.3-4h11.6c.75 0 1.41-.41 1.75-1.03l3.24-5.88A1 1 0 0022.46 6H5.21L4.27 4H1v2h2l3.6 7.59L5.25 16c-.16.28-.25.61-.25.96C5 18.1 5.9 19 7 19h14v-2H7.42a.25.25 0 01-.22-.38L6.7 14z" />
+              </svg>
+              Adicionar ao Carrinho
+            </>
+          )}
+        </button>
       </div>
     </div>
   );

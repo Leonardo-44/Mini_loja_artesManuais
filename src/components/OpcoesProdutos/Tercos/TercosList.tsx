@@ -12,6 +12,7 @@ import TercoPersonalizadoSaoJose from "../../../images/Tercos/TercoPersonalizado
 
 import TercoPersonalizadoAparecida from "../../../images/Tercos/TercoPersonalizadoAparecida.png";
 import TercoPersonalizadoAparecida2 from "../../../images/Tercos/TercoPersonalizadoAparecida2.png";
+import TercoPersonalizadoAparecida3 from "../../../images/Tercos/TercoPersonalizadoAparecida3.png";
 
 import TercoAparecida from "../../../images/Tercos/TercoAparecida.png";
 
@@ -29,6 +30,8 @@ import TercoSaoJose from "../../../images/Tercos/TercoSaoJose.png";
 import TercoSaoJose2 from "../../../images/Tercos/TercoSaoJose2.png";
 
 import TercoSaoCarloAcutis from "../../../images/Tercos/TercoSaoCarloAcustis.png";
+
+import TercoPersonalizadoSagradaFamilia from "../../../images/Tercos/TercoPersonalizadoSagradaFamilia.png";
 
 const WHATSAPP_NUMERO: string = "5589999300439";
 
@@ -87,7 +90,7 @@ const tercos = [
   },
   {
     id: 7,
-    nome: "Terço São Francisco Personalizado",
+    nome: "Terço Personalizado São Francisco ",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoSaoFranciscoPersonalizado,
   },
@@ -98,6 +101,7 @@ const tercos = [
     imagem: TercoPersonalizadoAparecida,
     variacoes: [
       { imagem: TercoPersonalizadoAparecida2 },
+      { imagem: TercoPersonalizadoAparecida3 },
     ],
   },
   {
@@ -118,6 +122,12 @@ const tercos = [
     nome: "Terço São Carlo Acutis",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoSaoCarloAcutis,
+  },
+  {
+    id: 12,
+    nome: "Terço Personalizado Sagrada Familia",
+    valor: "Valor e Cores Via Whatsapp",
+    imagem: TercoPersonalizadoSagradaFamilia,
   },
 ];
 
