@@ -6,9 +6,17 @@ import styles from "../Cards.module.css";
 
 import KitPassadeira from "../../../images/Tapetes/KitPassadeira.png";
 import KitPassadeiraDois from "../../../images/Tapetes/KItPassadeira2.png";
+import KitPassadeira3 from "../../../images/Tapetes/KitPAssadeira3.png";
+import KitPassadeira4 from "../../../images/Tapetes/KitPassadeira4.png";
+
 import TapeteOval from "../../../images/Tapetes/TapeteOval.png";
 import TapeteOvalDois from "../../../images/Tapetes/TapeteOval2.png";
+import TapeteOval3 from "../../../images/Tapetes/TapeteOval3.png";
+import TapeteOval4 from "../../../images/Tapetes/TapeteOval4.png";
+
 import TrilhoDeMesaRealeza from "../../../images/Tapetes/TrilhodeMesaRealeza.png";
+
+import TapetePassadeira from "../../../images/Tapetes/TapetePassadeira.png";
 
 const WHATSAPP_NUMERO: string = "5589999300439";
 
@@ -20,6 +28,8 @@ const tapetes = [
     imagem: KitPassadeira,
     variacoes: [
       { imagem: KitPassadeiraDois },
+      {imagem: KitPassadeira3},
+      {imagem: KitPassadeira4},
     ],
   },
   {
@@ -29,6 +39,8 @@ const tapetes = [
     imagem: TapeteOval,
     variacoes: [
       { imagem: TapeteOvalDois },
+        { imagem: TapeteOval3 },
+        { imagem: TapeteOval4 },
     ],
   },
   {
@@ -36,6 +48,12 @@ const tapetes = [
     nome: "Trilho de Mesa Realeza",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TrilhoDeMesaRealeza,
+  },
+  {
+    id: 4,
+    nome: "Tapete Passadeira",
+    valor: "Valor e Cores Via Whatsapp",
+    imagem: TapetePassadeira,
   },
 ];
 
