@@ -25,15 +25,6 @@
   box-shadow: 6px 6px 16px rgba(42, 31, 25, 0.38);
 }
 
-.voltar{
-  color: #98521a;
-  transition: ease 0.3s;
-}
-
-.voltar:hover {
-  color: #85e19c;
-}
-
 .imageWrapper {
   width: 100%;
   height: 350px;
@@ -62,7 +53,7 @@
 
 .nome {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #2a1f19;
   font-family: 'Georgia', serif;
@@ -82,7 +73,7 @@
   background-color: #31623d;
   color: #ffffff;
   text-decoration: none;
-  padding: 10px 16px;
+  padding: 8px 16px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -97,6 +88,20 @@
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+}
+
+.voltar{
+  background-color: #70381a;
+  padding: 8px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+.voltar:hover{
+  filter: brightness(0.9);
 }
 
 /* Tablet */

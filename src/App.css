@@ -102,3 +102,7 @@
 .btn-secondary:hover{
     filter: brightness(0.9);
 }
+
+.margin16{
+    margin: 16px 0;
+}

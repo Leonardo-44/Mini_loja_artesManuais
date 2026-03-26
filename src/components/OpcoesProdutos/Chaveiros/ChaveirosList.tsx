@@ -31,9 +31,11 @@ function ChaveirosList() {
           />
         ))}
       </div>
-      <Link className="d-flex alg-center jc-center" to="/">
-        <button className="btn-secondary">Voltar</button>
-      </Link>
+      <div className="d-flex alg-center jc-center margin16">
+        <Link to="/">
+          <button className={styles.voltar}>Voltar</button>
+        </Link>
+      </div>
     </>
   );
 }
