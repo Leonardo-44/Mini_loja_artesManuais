@@ -8,7 +8,7 @@ interface Variacao {
   mensagem?: string;
 }
 
-interface TercoCardProps {
+interface TapeteCardProps {
   nome: string;
   valor: string;
   imagem: string;
@@ -24,7 +24,7 @@ function TapetesCard({
   variacoes = [],
   whatsappNumero,
   mensagem,
-}: TercoCardProps) {
+}: TapeteCardProps) {
   const [indice, setIndice] = useState(0);
 
   const todas: Variacao[] = [

@@ -48,6 +48,9 @@ function PulseirasList() {
   return (
     <>
       <Header />
+      <div className="d-flex alg-center jc-center padding92">
+        <h1 className={styles.title}>Pulseiras</h1>
+      </div>
       <div className={styles["card-list"]}>
         {pulseiras.map((pulseira) => (
           <PulseirasCard

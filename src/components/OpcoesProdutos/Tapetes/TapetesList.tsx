@@ -43,6 +43,9 @@ function TapetesList() {
   return (
     <>
       <Header />
+      <div className="d-flex alg-center jc-center padding92">
+        <h1 className={styles.title}>Tapetes</h1>
+      </div>
       <div className={styles["card-list"]}>
         {tapetes.map((tapete) => (
           <TapetesCard

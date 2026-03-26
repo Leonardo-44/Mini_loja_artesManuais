@@ -5,7 +5,7 @@
   padding: 1rem;
   width: 100%;
   max-width: 1200px;
-  padding-top: 100px;
+  padding-top: 30px;
   margin: 0 auto;
 }
 .card {
@@ -30,6 +30,14 @@
   height: 350px;
   overflow: hidden;
   background-color: #ebe6e0;
+}
+
+.title{
+  color: var(--color-secondary-font);
+  border: 1px #000 solid;
+  border-radius: 8px;
+  background-color: var(--bg-products);
+  padding: 8px;
 }
 
 .image {
@@ -134,7 +142,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     padding: 0.75rem;
-    padding-top: 90px;
+    padding-top: 20px;
   }
 
   .imageWrapper {
@@ -160,7 +168,7 @@
   .card-list {
     grid-template-columns: 1fr;
     width: 95%;
-    padding-top: 90px;
+    padding-top: 20px;
   }
 
   .imageWrapper {
