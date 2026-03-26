@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 export interface CartItem {
-  id: string;       // nome + índice da variação para ser único
+  id: string; // nome + índice da variação para ser único
   nome: string;
   imagem: string;
   quantidade: number;
@@ -26,7 +26,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existente = prev.find((i) => i.id === novoItem.id);
       if (existente) {
         return prev.map((i) =>
-          i.id === novoItem.id ? { ...i, quantidade: i.quantidade + 1 } : i
+          i.id === novoItem.id ? { ...i, quantidade: i.quantidade + 1 } : i,
         );
       }
       return [...prev, { ...novoItem, quantidade: 1 }];
@@ -39,8 +39,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const alterarQuantidade = (id: string, delta: number) =>
     setItens((prev) =>
       prev
-        .map((i) => (i.id === id ? { ...i, quantidade: i.quantidade + delta } : i))
-        .filter((i) => i.quantidade > 0)
+        .map((i) =>
+          i.id === id ? { ...i, quantidade: i.quantidade + delta } : i,
+        )
+        .filter((i) => i.quantidade > 0),
     );
 
   const limparCarrinho = () => setItens([]);
@@ -49,7 +51,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ itens, adicionarItem, removerItem, alterarQuantidade, limparCarrinho, totalItens }}
+      value={{
+        itens,
+        adicionarItem,
+        removerItem,
+        alterarQuantidade,
+        limparCarrinho,
+        totalItens,
+      }}
     >
       {children}
     </CartContext.Provider>

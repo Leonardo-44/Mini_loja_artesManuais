@@ -1,4 +1,4 @@
-/* Botão flutuante */
+/* Botão Flutuante (FAB) */
 .fab {
   position: fixed;
   bottom: 28px;
@@ -15,7 +15,8 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  transition: background 0.2s, transform 0.2s;
+  /* Transições suaves */
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .fab:hover {
@@ -23,32 +24,25 @@
   transform: scale(1.08);
 }
 
+.fab:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
 .badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  background: #d44;
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: -5px;
+  right: -5px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
   border: 2px solid #fff;
 }
 
-/* Overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 998;
-}
-
-/* Painel lateral */
+/* Painel Lateral */
 .painel {
   position: fixed;
   top: 0;
@@ -58,75 +52,77 @@
   max-width: 95vw;
   background: #fefbf8;
   box-shadow: -4px 0 20px rgba(42, 31, 25, 0.25);
-  z-index: 999;
+  z-index: 1001; /* Acima do overlay */
   display: flex;
   flex-direction: column;
   border-left: 2px solid #382b1d;
+  
+  /* Estado inicial (Escondido) */
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
 }
 
+/* Quando o painel está aberto */
+.painelAberto {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Overlay (Fundo escurecido) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  
+  /* Estado inicial (Transparente) */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.overlayAberto {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilização Interna */
 .cabecalho {
+  padding: 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 18px 20px;
-  border-bottom: 1px solid #ddd5c8;
-  background: #f4ede3;
+  align-items: center;
+  border-bottom: 1px solid #eee;
 }
 
-.titulo {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #2a1f19;
-  font-family: 'Georgia', serif;
-}
+.titulo { margin: 0; font-size: 1.2rem; }
 
 .fechar {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #70381a;
-  line-height: 1;
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: background 0.2s;
 }
 
-.fechar:hover {
-  background: #ebe0d5;
-}
-
-.vazio {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7a6655;
-  font-size: 0.95rem;
-  padding: 40px;
-  text-align: center;
-}
-
-/* Lista de itens */
 .lista {
   flex: 1;
   overflow-y: auto;
   list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #f9f5ee;
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #e0d4c4;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 12px;
 }
 
 .thumb {
@@ -134,79 +130,39 @@
   height: 60px;
   object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0;
-  border: 1px solid #d0c4b4;
 }
 
-.itemInfo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.itemNome {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #2a1f19;
-  font-family: 'Georgia', serif;
-  line-height: 1.3;
-}
+.itemInfo { flex: 1; }
+.itemNome { display: block; font-weight: 600; margin-bottom: 5px; }
 
 .controles {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .controles button {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  border: 1px solid #c0ae9a;
-  background: #efe8de;
-  color: #2a1f19;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ddd;
+  background: white;
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  transition: background 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.controles button:hover {
-  background: #ddd0c2;
-}
-
-.controles span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #2a1f19;
-  min-width: 18px;
-  text-align: center;
+  border-radius: 4px;
 }
 
 .remover {
   background: none;
   border: none;
-  font-size: 1.15rem;
   cursor: pointer;
+  font-size: 1.2rem;
   opacity: 0.6;
-  transition: opacity 0.2s;
-  padding: 4px;
-  flex-shrink: 0;
 }
 
-.remover:hover {
-  opacity: 1;
-}
+.remover:hover { opacity: 1; color: #ff4d4d; }
 
-/* Rodapé */
 .rodape {
-  padding: 16px 20px;
-  border-top: 1px solid #ddd5c8;
-  background: #f4ede3;
+  padding: 20px;
+  border-top: 2px solid #382b1d;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -214,37 +170,31 @@
 
 .btnLimpar {
   background: none;
-  border: 1px solid #c0715a;
-  color: #c0715a;
-  border-radius: 8px;
-  padding: 8px 16px;
+  border: 1px solid #ccc;
+  padding: 8px;
   cursor: pointer;
-  font-size: 0.88rem;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btnLimpar:hover {
-  background: #c0715a;
-  color: #fff;
+  border-radius: 5px;
 }
 
 .btnComprar {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #31623d;
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: filter 0.2s;
 }
 
-.btnComprar:hover {
-  background-color: #245030;
+.btnComprar:hover { filter: brightness(0.9); }
+
+.vazio {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
 }

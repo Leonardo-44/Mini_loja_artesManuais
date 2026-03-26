@@ -34,15 +34,16 @@ function TapetesCard({
   ];
 
   const atual = todas[indice];
-  const nomeAtual  = atual.nome  ?? nome;
+  const nomeAtual = atual.nome ?? nome;
   const precoAtual = atual.preco ?? valor;
 
   const itemId = `${nome}-${indice}`;
   const noCarrinho = itens.some((i) => i.id === itemId);
 
-  const irAnterior = () => setIndice((i) => (i - 1 + todas.length) % todas.length);
-  
-  const irProxima  = () => setIndice((i) => (i + 1) % todas.length);
+  const irAnterior = () =>
+    setIndice((i) => (i - 1 + todas.length) % todas.length);
+
+  const irProxima = () => setIndice((i) => (i + 1) % todas.length);
   const handleToggleCarrinho = () => {
     if (noCarrinho) {
       removerItem(itemId);
@@ -68,12 +69,21 @@ function TapetesCard({
               onClick={irAnterior}
               aria-label="Variação anterior"
               style={{
-                position: "absolute", left: 6, top: "50%",
+                position: "absolute",
+                left: 6,
+                top: "50%",
                 transform: "translateY(-50%)",
-                background: "rgba(0,0,0,0.45)", border: "none",
-                borderRadius: "50%", width: 32, height: 32,
-                cursor: "pointer", color: "#fff", fontSize: 20,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                background: "rgba(0,0,0,0.45)",
+                border: "none",
+                borderRadius: "50%",
+                width: 32,
+                height: 32,
+                cursor: "pointer",
+                color: "#fff",
+                fontSize: 20,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               ‹
@@ -83,12 +93,21 @@ function TapetesCard({
               onClick={irProxima}
               aria-label="Próxima variação"
               style={{
-                position: "absolute", right: 6, top: "50%",
+                position: "absolute",
+                right: 6,
+                top: "50%",
                 transform: "translateY(-50%)",
-                background: "rgba(0,0,0,0.45)", border: "none",
-                borderRadius: "50%", width: 32, height: 32,
-                cursor: "pointer", color: "#fff", fontSize: 20,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                background: "rgba(0,0,0,0.45)",
+                border: "none",
+                borderRadius: "50%",
+                width: 32,
+                height: 32,
+                cursor: "pointer",
+                color: "#fff",
+                fontSize: 20,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               ›
@@ -110,9 +129,13 @@ function TapetesCard({
                   key={i}
                   onClick={() => setIndice(i)}
                   style={{
-                    width: 7, height: 7, borderRadius: "50%",
-                    background: i === indice ? "#fff" : "rgba(255,255,255,0.45)",
-                    cursor: "pointer", display: "inline-block",
+                    width: 7,
+                    height: 7,
+                    borderRadius: "50%",
+                    background:
+                      i === indice ? "#fff" : "rgba(255,255,255,0.45)",
+                    cursor: "pointer",
+                    display: "inline-block",
                   }}
                 />
               ))}
