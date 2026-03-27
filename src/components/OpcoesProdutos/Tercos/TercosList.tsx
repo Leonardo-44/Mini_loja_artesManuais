@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import TercoCard from "./TercosCard";
 import Header from "../../Header/Header";
@@ -5,10 +6,12 @@ import Header from "../../Header/Header";
 import styles from "../Cards.module.css";
 
 import TercoInfantilEmborrachadoMasculino from "../../../images/Tercos/TercoInfantilEmborrachadoMasculino.png";
-import TercoInfantilEmborrachadoMasculino2 from "../../../images/Tercos/TercoInfantilEmborrachadoMasculino2.png"
+import TercoInfantilEmborrachadoMasculino2 from "../../../images/Tercos/TercoInfantilEmborrachadoMasculino2.png";
 
 import TercoInfantilEmborrachadoFeminino from "../../../images/Tercos/TercoInfantilEmborrachadoFeminino.png";
+
 import TercoPersonalizadoSaoJose from "../../../images/Tercos/TercoPersonalizadoSaoJose.png";
+import TercoPersonalizadoSaoJose2 from "../../../images/Tercos/TercoPersonalizadoSaoJose2.png";
 
 import TercoPersonalizadoAparecida from "../../../images/Tercos/TercoPersonalizadoAparecida.png";
 import TercoPersonalizadoAparecida2 from "../../../images/Tercos/TercoPersonalizadoAparecida2.png";
@@ -33,7 +36,11 @@ import TercoSaoCarloAcutis from "../../../images/Tercos/TercoSaoCarloAcustis.png
 
 import TercoPersonalizadoSagradaFamilia from "../../../images/Tercos/TercoPersonalizadoSagradaFamilia.png";
 
+import KitTercoChaveiroSaoJose from "../../../images/Tercos/KitTercoChaveiroSaoJose.png";
+import KitTercoChaveiroSaoJose2 from "../../../images/Tercos/KitTercoChaveiroSaoJose2.png";
+
 const WHATSAPP_NUMERO: string = "5589999300439";
+const ITENS_POR_PAGINA = 12;
 
 const tercos = [
   {
@@ -57,18 +64,14 @@ const tercos = [
     nome: "Terço Personalizado São José",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoPersonalizadoSaoJose,
-    // variacoes: [
-    //   { imagem: TercoPersonalizadoAparecida, nome: "Terço Personalizado Aparecida" },
-    // ],
+    variacoes: [{ imagem: TercoPersonalizadoSaoJose2 }],
   },
   {
     id: 3,
     nome: "Terço Personalizado Infantil",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoPersonalizadoInfantil,
-    variacoes: [
-      {imagem: TercoPersonalizadoInfantil2},
-    ],
+    variacoes: [{ imagem: TercoPersonalizadoInfantil2 }],
   },
   {
     id: 4,
@@ -90,7 +93,7 @@ const tercos = [
   },
   {
     id: 7,
-    nome: "Terço Personalizado São Francisco ",
+    nome: "Terço Personalizado São Francisco",
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoSaoFranciscoPersonalizado,
   },
@@ -129,19 +132,38 @@ const tercos = [
     valor: "Valor e Cores Via Whatsapp",
     imagem: TercoPersonalizadoSagradaFamilia,
   },
+  {
+    id: 13,
+    nome: "Kit Terço e Chaveiro São José",
+    valor: "Valor e Cores Via Whatsapp",
+    imagem: KitTercoChaveiroSaoJose,
+    variacoes: [{ imagem: KitTercoChaveiroSaoJose2 }],
+  },
 ];
 
 function TercoList() {
+  const [pagina, setPagina] = useState(1);
+
+  const totalPaginas = Math.ceil(tercos.length / ITENS_POR_PAGINA);
+  const inicio = (pagina - 1) * ITENS_POR_PAGINA;
+  const tercosPagina = tercos.slice(inicio, inicio + ITENS_POR_PAGINA);
+
+  const handlePagina = (num: number) => {
+    setPagina(num);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Header />
       <div className="d-flex alg-center jc-center padding92">
         <h1 className={styles.title}>Terços</h1>
       </div>
+
       <div className={styles["card-list"]}>
-        {tercos.map((terco) => (
+        {tercosPagina.map((terco) => (
           <TercoCard
-            key={terco.id}
+            key={`${terco.id}-p${pagina}`}
             nome={terco.nome}
             valor={terco.valor}
             imagem={terco.imagem}
@@ -150,6 +172,37 @@ function TercoList() {
           />
         ))}
       </div>
+
+      {totalPaginas > 1 && (
+        <div className={styles.paginacao}>
+          <button
+            className={styles.paginacaoBotao}
+            onClick={() => handlePagina(pagina - 1)}
+            disabled={pagina === 1}
+          >
+            ‹ Anterior
+          </button>
+
+          {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((num) => (
+            <button
+              key={num}
+              className={`${styles.paginacaoBotao} ${pagina === num ? styles.paginacaoAtiva : ""}`}
+              onClick={() => handlePagina(num)}
+            >
+              {num}
+            </button>
+          ))}
+
+          <button
+            className={styles.paginacaoBotao}
+            onClick={() => handlePagina(pagina + 1)}
+            disabled={pagina === totalPaginas}
+          >
+            Próxima ›
+          </button>
+        </div>
+      )}
+
       <div className="d-flex alg-center jc-center margin16">
         <Link to="/">
           <button className={styles.voltar}>Voltar</button>

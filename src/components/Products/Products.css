@@ -24,6 +24,10 @@
     scroll-margin-top: 70px;
 }
 
+.iconsProducts{
+    max-width: 50px;
+}
+
 /* ── Responsividade ── */
 
 /* Container vira grid de 2 colunas em tablets */

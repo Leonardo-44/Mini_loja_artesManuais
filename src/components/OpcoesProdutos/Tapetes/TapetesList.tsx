@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import TapetesCard from "./TapetesCard";
 import Header from "../../Header/Header";
@@ -19,6 +20,7 @@ import TrilhoDeMesaRealeza from "../../../images/Tapetes/TrilhodeMesaRealeza.png
 import TapetePassadeira from "../../../images/Tapetes/TapetePassadeira.png";
 
 const WHATSAPP_NUMERO: string = "5589999300439";
+const ITENS_POR_PAGINA = 12;
 
 const tapetes = [
   {
@@ -28,8 +30,8 @@ const tapetes = [
     imagem: KitPassadeira,
     variacoes: [
       { imagem: KitPassadeiraDois },
-      {imagem: KitPassadeira3},
-      {imagem: KitPassadeira4},
+      { imagem: KitPassadeira3 },
+      { imagem: KitPassadeira4 },
     ],
   },
   {
@@ -39,8 +41,8 @@ const tapetes = [
     imagem: TapeteOval,
     variacoes: [
       { imagem: TapeteOvalDois },
-        { imagem: TapeteOval3 },
-        { imagem: TapeteOval4 },
+      { imagem: TapeteOval3 },
+      { imagem: TapeteOval4 },
     ],
   },
   {
@@ -58,6 +60,17 @@ const tapetes = [
 ];
 
 function TapetesList() {
+  const [pagina, setPagina] = useState(1);
+
+  const totalPaginas = Math.ceil(tapetes.length / ITENS_POR_PAGINA);
+  const inicio = (pagina - 1) * ITENS_POR_PAGINA;
+  const tapetesPagina = tapetes.slice(inicio, inicio + ITENS_POR_PAGINA);
+
+  const handlePagina = (num: number) => {
+    setPagina(num);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <Header />
@@ -65,9 +78,9 @@ function TapetesList() {
         <h1 className={styles.title}>Tapetes</h1>
       </div>
       <div className={styles["card-list"]}>
-        {tapetes.map((tapete) => (
+        {tapetesPagina.map((tapete) => (
           <TapetesCard
-            key={tapete.id}
+            key={`${tapete.id}-p${pagina}`}
             nome={tapete.nome}
             valor={tapete.valor}
             imagem={tapete.imagem}
@@ -76,6 +89,37 @@ function TapetesList() {
           />
         ))}
       </div>
+
+      {totalPaginas > 1 && (
+        <div className={styles.paginacao}>
+          <button
+            className={styles.paginacaoBotao}
+            onClick={() => handlePagina(pagina - 1)}
+            disabled={pagina === 1}
+          >
+            ‹ Anterior
+          </button>
+
+          {Array.from({ length: totalPaginas }, (_, i) => i + 1).map((num) => (
+            <button
+              key={num}
+              className={`${styles.paginacaoBotao} ${pagina === num ? styles.paginacaoAtiva : ""}`}
+              onClick={() => handlePagina(num)}
+            >
+              {num}
+            </button>
+          ))}
+
+          <button
+            className={styles.paginacaoBotao}
+            onClick={() => handlePagina(pagina + 1)}
+            disabled={pagina === totalPaginas}
+          >
+            Próxima ›
+          </button>
+        </div>
+      )}
+
       <div className="d-flex alg-center jc-center margin16">
         <Link to="/">
           <button className={styles.voltar}>Voltar</button>

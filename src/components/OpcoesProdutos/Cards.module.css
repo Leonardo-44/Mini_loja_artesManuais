@@ -170,7 +170,42 @@
   background-color: #c0715a !important;
 }
 
- 
+ .paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.paginacaoBotao {
+  background-color: #f9f5ee;
+  color: #2a1f19;
+  border: 1px solid #382b1d;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.paginacaoBotao:hover:not(:disabled) {
+  background-color: #70381a;
+  color: #fff;
+}
+
+.paginacaoBotao:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.paginacaoAtiva {
+  background-color: #70381a !important;
+  color: #fff !important;
+  border-color: #70381a;
+}
 
 /* Tablet */
 @media (max-width: 1024px) {
