@@ -79,7 +79,9 @@ li:hover {
     align-items: center;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
     /* Garante que as classes utilitárias não quebrem o menu */
     display: flex !important;
   }

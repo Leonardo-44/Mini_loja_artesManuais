@@ -4,7 +4,7 @@ import "../../App.css";
 //ICONS
 import Star from "../../icons/stars.svg";
 import FLower from "../../icons/flower.svg";
-import Heart from "../../icons/heart.svg"
+import Heart from "../../icons/heart.svg";
 
 function About() {
   return (
@@ -18,14 +18,9 @@ function About() {
           </h2>
           <p className="caixaTexto">
             Somos apaixonados pela arte feita à mão. Cada terço, cada peça em{" "}
-            
             resina, cada chaveiro é criado com dedicação e atenção aos detalhes.{" "}
-            
-            Trabalhamos com materiais selecionados — pedras naturais, flores{" "}
-           
-            secas, resina cristalina e muito carinho — para entregar peças
-            únicas 
-            que carregam significado e beleza.
+            Trabalhamos com materiais selecionados — pedras naturais, resina cristalina 
+            e muito carinho — para entregar peças únicas que carregam significado e beleza.
           </p>
         </div>
         <div className="d-flex container jc-around">
@@ -49,8 +44,8 @@ function About() {
             <img src={FLower} alt="Star" width="32px" />
             <h4>Matériais de Qualidade</h4>
             <p>
-             Pedra, linhas e resinas <br />
-             de Alta Qualidade
+              Pedra, linhas e resinas <br />
+              de Alta Qualidade
             </p>
           </div>
         </div>

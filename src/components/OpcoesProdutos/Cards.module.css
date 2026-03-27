@@ -16,7 +16,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   border: 1px solid #382b1d;
 }
 
@@ -32,7 +34,7 @@
   background-color: #ebe6e0;
 }
 
-.title{
+.title {
   color: var(--color-secondary-font);
   border: 1px #000 solid;
   border-radius: 8px;
@@ -64,7 +66,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: #2a1f19;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 .preco {
@@ -98,7 +100,7 @@
   flex-shrink: 0;
 }
 
-.voltar{
+.voltar {
   background-color: #70381a;
   padding: 8px 20px;
   color: #ffffff;
@@ -108,7 +110,7 @@
   cursor: pointer;
 }
 
-.voltar:hover{
+.voltar:hover {
   filter: brightness(0.9);
 }
 
@@ -125,14 +127,16 @@
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition:
+    background 0.2s,
+    transform 0.15s;
   width: 100%;
 }
- 
+
 .botaoCarrinho:hover {
   background-color: #5a2c12;
 }
- 
+
 .botaoAdicionado {
   background-color: #31623d !important;
   transform: scale(0.97);
@@ -157,20 +161,20 @@
   justify-content: center;
   font-size: 1rem;
   font-weight: 700;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
- 
+
 /* Botão no estado "adicionado" */
 .botaoAdicionado {
   background-color: #31623d !important;
 }
- 
+
 .botaoAdicionado:hover {
   background-color: #c0715a !important;
 }
 
- .paginacao {
+.paginacao {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +192,9 @@
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .paginacaoBotao:hover:not(:disabled) {

@@ -1,69 +1,69 @@
-.products{
-    padding: 35px 0 ;
-    background: var(--bg-products);
+.products {
+  padding: 35px 0;
+  background: var(--bg-products);
 }
 
-.card-products{
-    padding: 30px 60px;
-    background-color: #fff;
-    border-radius: 16px;
-    border: 1px solid #98521A;
-    cursor: pointer;
-    width: fit-content;
-    transition: 0.5s;
-    transform: scale(1);
-    z-index: -1;
+.card-products {
+  padding: 30px 60px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 1px solid #98521a;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.5s;
+  transform: scale(1);
+  z-index: -1;
 }
 
-.card-products:hover{
-    background-color: #f5dac3;
-    transform: scale(1.02);
+.card-products:hover {
+  background-color: #f5dac3;
+  transform: scale(1.02);
 }
 
-#products{
-    scroll-margin-top: 70px;
+#products {
+  scroll-margin-top: 70px;
 }
 
-.iconsProducts{
-    max-width: 50px;
+.iconsProducts {
+  max-width: 50px;
 }
 
 /* ── Responsividade ── */
 
 /* Container vira grid de 2 colunas em tablets */
 @media (max-width: 1024px) {
-    .cards{
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 0 24px;
-    }
+  .cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 24px;
+  }
 
-    .card-products {
-        width: 100%;
-        padding: 28px 40px;
-        box-sizing: border-box;
-    }
+  .card-products {
+    width: 100%;
+    padding: 28px 40px;
+    box-sizing: border-box;
+  }
 }
 
 /* 1 coluna em mobile */
 @media (max-width: 600px) {
-    .cards{
-        grid-template-columns: 1fr;
-        padding: 0 16px;
-    }
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
 
-    .card-products {
-        padding: 24px 28px;
-        text-align: center;
-    }
+  .card-products {
+    padding: 24px 28px;
+    text-align: center;
+  }
 
-    .txt-align {
-        padding: 0 16px;
-        text-align: center;
-    }
+  .txt-align {
+    padding: 0 16px;
+    text-align: center;
+  }
 
-    .margin-bottom {
-        margin-bottom: 24px;
-    }
+  .margin-bottom {
+    margin-bottom: 24px;
+  }
 }

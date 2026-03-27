@@ -101,9 +101,9 @@ export default function Cart() {
       </div>
 
       {/* Overlay - Controlado por classe */}
-      <div 
-        className={`${styles.overlay} ${aberto ? styles.overlayAberto : ""}`} 
-        onClick={() => setAberto(false)} 
+      <div
+        className={`${styles.overlay} ${aberto ? styles.overlayAberto : ""}`}
+        onClick={() => setAberto(false)}
       />
     </>
   );
